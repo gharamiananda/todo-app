@@ -24,7 +24,11 @@ const Todo = () => {
         if (inputData && editItem) {
             const remainingTodos = items.filter(item => item._id !== editItem);
 
+            const index = items.findIndex(object => {
+                return object._id === editItem;
+            });
 
+            console.log(index);
 
             setItems([...remainingTodos, { _id: editItem, inputData }]);
 
